@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<div class="listado">
+     {% for trasfondo in resultado %}
+     <a class="elemento" href="{{ path( "app_trasfondo", { "id": trasfondo.id} ) }}">
+        <img class="I" src="{{trasfondo.img}}">
+       <h2 class="N">{{ trasfondo.Nombre }}</h2>
+       <span class="E"></span>
+       <b class="S">{{trasfondo.Origen}}</b>
+        <i class="A">{{trasfondo.Autor}}</i>
+        <i class="C"> {{trasfondo.Descripcion}}</i>
+
+         
+      </a>
+      
+     {% endfor %}
+  
+ </div>
+ 
+
+
+
+{% endblock %}
+
+

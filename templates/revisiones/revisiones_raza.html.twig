@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<div class="lista_revisiones">
+    <h1>Revisiones de las Razas</h1>
+    {% for revision in revisiones %}
+    <div class="elemento_revisiones">
+        <img src="{{revision.img}}">
+        <h2>{{ revision.Nombre }}</h2>
+        <div>
+            <button onclick="location.href='{{ path("app_comprobar_raza", {'id': revision.id}) }}'" class="btn btn-info">Ver más</button>
+            <button onclick="location.href='{{ path('app_validar_raza', {'id': revision.id}) }}'" class="btn btn-success">Validar raza</button>
+            <button onclick="location.href='{{ path('app_eliminar_raza', {'id': revision.id}) }}'" class="btn btn-danger">Eliminar raza</button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

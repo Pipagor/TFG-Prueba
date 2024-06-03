@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<div class="lista_revisiones">
+    <h1>Revisiones de las Subrazas</h1>
+    {% for revision in revisiones %}
+    <div class="elemento_revisiones">
+        <img src="{{revision.img}}">
+        <h2>{{ revision.Nombre }}</h2>
+        <div>
+            <button onclick="location.href='{{ path("app_comprobar_subraza", {'id': revision.id}) }}'" class="btn btn-info">Ver más</button>
+            <button onclick="location.href='{{ path('app_validar_subraza', {'id': revision.id}) }}'" class="btn btn-success">Validar subraza</button>
+            <button onclick="location.href='{{ path('app_eliminar_subraza', {'id': revision.id}) }}'" class="btn btn-danger">Eliminar subraza</button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

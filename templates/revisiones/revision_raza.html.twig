@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BuscadorController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<div>
+   <h1>{{raza.nombre}}</h1>
+    <h2>{{raza.descripcion}}</h2>
+    <h2>{{raza.fuerza}}</h2>
+    <h2>{{raza.destreza}}</h2>
+    <h2>{{raza.constitucion}}</h2>
+    <h2>{{raza.inteligencia}}</h2>
+    <h2>{{raza.sabiduria}}</h2>
+    <h2>{{raza.carisma}}</h2>
+    <h2>{{raza.velocidad}}</h2>
+    <h2>{{raza.ataquedesarmado}}</h2>
+    <h2>{{raza.autor}}</h2>
+    <a href="{{ path ("app_revisiones_raza")}}">Volver</a>
+</div>
+
+{% endblock %}

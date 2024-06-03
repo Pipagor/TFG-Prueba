@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+<div class="formulario center-h center-v">
+<div class="formulario2 ">
+    <h1 class="titulo">Creador de personajes</h1>
+ {{ form_start(form) }} 
+    <div class="row">
+        <div class="C">
+            {{ form_row(form.Subclase) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.Subraza) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+            <p>Tras pulsar enviar se cargará su ficha de personaje.<br>¡Recuerde usar ctrl+p para guardarla!</p>
+        </div>
+        <span class="E"></span>
+        <div class="A"><br>
+            {{ form_row(form.save) }}
+        </div>
+    </div>
+ {{form_end(form)}}
+</div>
+</div>
+ 
+
+
+
+{% endblock %}

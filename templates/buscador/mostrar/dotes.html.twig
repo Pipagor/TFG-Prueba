@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+ {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/bodygrid.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="grid-body">
+        <div class="L1"></div>
+        <div class="L2"></div>
+        <div class="DC">
+            <div class='grid-subclase'>
+                <span class="V1"> </span>
+                <h1 class="N">{{dote.nombre}}</h1>
+                <span class="V2"> </span>
+                <div class="R"><br>{{dote.Descripcion}}</div>
+                <div class="I" ><img src="{{dote.img}}"/></div>
+            </div>
+        </div>
+        <div class="TP">
+            <h1>Requisitos</h1>
+            <table class="Progreso">
+                <th>
+                    <td>{{dote.Requisitos}}</td>
+                </th>
+            </table>
+        </div>
+        <div class="RC">
+            <h1>Beneficios</h1>
+            <div class="grid-rasgos">
+                <span class="N"><b>{{dote.nombre}}</b></span>
+                <span class="V1"></span>
+                <span class="L"></span>
+                <span class="D">{{dote.Beneficios}}</span> 
+            </div>
+        </div>
+        <div class="SU"></div>
+    </div>
+{% endblock %}
+
+

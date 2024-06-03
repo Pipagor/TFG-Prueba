@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+<div class="indices">
+    <h1>Buscador</h1>
+    <a href="{{ path("app_buscador_clase") }}">
+        <span><i class="icofont-shield"></i> Clases</span>
+    </a>
+    <a href="{{ path("app_buscador_razas") }}">
+        <span><i class="icofont-users-alt-3"></i> Razas</span>
+    </a>
+    <a href="{{ path("app_buscador_trasfondo") }}">
+        <span><i class="icofont-paper"></i> Trasfondos</span>
+    </a>
+     <a href="{{ path("app_buscador_dotes") }}">
+        <span><i class="icofont-listine-dots"></i> Dotes</span>
+    </a>
+     <a href="{{ path("app_buscador_hechizos") }}">
+        <span><i class="icofont-duotone icofont-wand"></i> Hechizos</span>
+    </a>
+</div>
+
+
+
+{% endblock %}

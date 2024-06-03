@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div style="text-align: center; padding: 20px;">
+        <h1 style="color: #4CAF50;">Solicitud enviada</h1>
+        <p style="font-size: 20px;">La solicitud se ha enviado correctamente</p>
+        <a href="{{ path('app_index') }}" class="btn" style="background-color: #4CAF50; color: white; padding: 14px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 12px;">Volver</a>
+    </div>
+{% endblock %}

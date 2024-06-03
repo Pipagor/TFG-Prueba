@@ -1,0 +1,120 @@
+{% extends 'base.html.twig' %}
+ {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/bodygrid.css') }}">
+{% endblock %}
+{% block body %}
+   <div class="grid-body">
+      <div class="L1"></div>
+      <div class="L2"></div>
+      <div class="DC">
+         <div class='grid-subclase'>
+            <span class="V1"> </span>
+            <h1 class="N">{{subraza.nombre}}</h1>
+            <span class="V2"> </span>
+            <div class="R">
+               <span><b>Ataque desarmado: </b>{{subraza.AtaqueDesarmado}}</span><br>
+               {{subraza.Descripcion}}
+            </div>
+            <div class="I" ><img src="{{subraza.img}}"/></div>
+         </div>
+      </div>
+      <div class="TP">
+            <h1>Estadísticas de raza</h1>
+            <table class="Progreso">
+                <tr>
+                    <th>Estadística</th>
+                    <th>Valor</th>
+                </tr>
+                <tr>
+                    <td>Fuerza</td>
+                    <td>{{subraza.Fuerza}}</td>
+                </tr>
+                <tr>
+                    <td>Destreza</td>
+                    <td>{{subraza.Destreza }}</td>
+                </tr>
+                <tr>
+                    <td>Constitución</td>
+                    <td>{{subraza.Constitucion }}</td>
+                </tr>
+                <tr>
+                    <td>Inteligencia</td>
+                    <td>{{subraza.Inteligencia }}</td>
+                </tr>
+                <tr>
+                    <td>Sabiduría</td>
+                    <td>{{subraza.Sabiduria }}</td>
+                </tr>
+                <tr>
+                    <td>Carisma</td>
+                    <td>{{subraza.Carisma }}</td>
+                </tr>
+            </table>
+            </div>
+        <div class="RC">
+            <h1>Rasgos de raza</h1>
+            <div>
+                {% for habilidad in rasgos %}
+                    <div class="grid-rasgos">
+                        <span class="N"><b>{{habilidad.nombre}}</b></span>
+                        <span class="V1"></span>
+                        <span class="L"><b><i>Nivel {{habilidad.OrigenNivel}}</i></b></span>
+                        <span class="D">{% set parraf = ""%}
+                                        {% set buffer = 0 %}
+                                        {% for i in 0.. habilidad.descripcion|length %}
+                                            {% if buffer > 0 %}
+                                                {% set buffer = buffer - 1 %}
+                                            {% elseif habilidad.descripcion|slice(i,5) == "{|S|}" %}
+                                                {% set parraf = [parraf,"\n"]|join %}
+                                                {% set buffer = 4 %}
+                                            {% elseif habilidad.descripcion|slice(i,5) == "{|B|}" %}
+                                                {{parraf|nl2br}}
+                                                {% set parraf = ""%}
+                                                <b>
+                                                {% set buffer = 4 %}
+                                            {% elseif habilidad.descripcion|slice(i,5) == "{|I|}" %}
+                                                {{parraf|nl2br}}
+                                                {% set parraf = ""%}
+                                                <i>
+                                                {% set buffer = 4 %}
+                                            {% elseif habilidad.descripcion|slice(i,6) == "{|/B|}" %}
+                                                {{parraf|nl2br}}
+                                                {% set parraf = ""%}
+                                                </b>
+                                                {% set buffer = 5 %}
+                                            {% elseif habilidad.descripcion|slice(i,6) == "{|/I|}" %}
+                                                {{parraf|nl2br}}
+                                                {% set parraf = ""%}
+                                                </i>
+                                                {% set buffer = 5 %}
+                                            {% else %}
+                                                {% set parraf = [parraf,habilidad.descripcion|slice(i,1)]|join %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        {{parraf|nl2br}}
+                        </span> 
+                    </div><br>
+                {% endfor %}
+            </div>
+        </div>
+         <div class="SU">
+         <h1>Raza principal</h1>
+               <div class="listado">
+                  <a class="elemento" href="{{ path( "app_raza", { "id": raza.id} ) }}">
+                     <img class="I" src="{{raza.img}}">
+                     <h2 class="N">{{ raza.Nombre }}</h2>
+                     <span class="E"></span>
+                     <i class="S">{{raza.Descripcion}}</i>
+                     <i class="A">{{raza.Autor}}</i>
+                     <span class="C"></span>
+                  </a>
+               </div>
+      </div>
+
+
+   </div>
+    
+{% endblock %}
+
+

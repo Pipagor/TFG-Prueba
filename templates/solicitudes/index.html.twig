@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BuscadorController!{% endblock %}
+
+{% block body %}
+
+<div class="indices">
+    <h1>Solicitudes</h1>
+    <a href="{{ path("app_solicitud_clase") }}">
+       <span><i class="icofont-shield"></i> Clases</span>
+    </a>
+    <a href="{{ path("app_solicitud_raza") }}">
+        <span><i class="icofont-users-alt-3"></i> Razas</span>
+    </a>
+    <a href="{{ path("app_solicitud_trasfondos") }}">
+        <span><i class="icofont-paper"></i> Trasfondos</span>
+    </a>
+     <a href="{{ path("app_solicitud_dote") }}">
+        <span><i class="icofont-listine-dots"></i> Dotes</span>
+    </a>
+     <a href="{{ path("app_solicitud_hechizo") }}">
+        <span><i class="icofont-duotone icofont-wand"></i> Hechizos</span>
+    </a>
+</div>
+{% endblock %}

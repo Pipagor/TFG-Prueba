@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BuscadorController!{% endblock %}
+
+{% block body %}
+
+<div class="formulario center-h center-v">
+<div class="formulario2 ">
+    <h1 class="titulo">Solicitudes de Hechizos</h1>
+ {{ form_start(form) }} 
+    <div class="row">
+        <div class="C">
+            {{ form_row(form.Nombre) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.Descripcion) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+            {{ form_row(form.Nivel) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.Escuela) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+            {{ form_row(form.Rango) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.Componentes) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+            {{ form_row(form.Zona_Efecto) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.TiempoDeEjecucion) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="C">
+            {{ form_row(form.Duracion) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.img) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+           {{ form_row(form.Autor) }}
+        </div>
+        <span class="E"></span>
+        <div class="A"><br>
+            {{ form_row(form.Enviar) }}
+        </div>
+    </div>
+ {{form_end(form)}}
+    
+    </div>
+ </div>
+ 
+
+
+{% endblock %}

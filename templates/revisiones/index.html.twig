@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BuscadorController!{% endblock %}
+
+{% block body %}
+<div class="indices">
+    <h1>Accesos Rápidos</h1>
+    <a href="{{ path("app_revisiones_clase") }}">
+        <span><i class="icofont-shield"></i> Clases</span> ({{clases}})
+    </a>
+    
+    <a href="{{ path("app_revisiones_subclase") }}">
+        <span><i class="icofont-duotone icofont-shield"></i> Subclases</span> ({{subclases}})
+    </a>
+    
+    <a href="{{ path("app_revisiones_raza") }}">
+        <span><i class="icofont-users-alt-3"></i> Razas</span> ({{razas}})
+    </a>
+    
+     <a href="{{ path("app_revisiones_subraza") }}">
+        <span><i class="icofont-user"></i> Subrazas</span> ({{subrazas}})
+    </a>
+    
+    <a href="{{ path("app_revisiones_trasfondo") }}">
+        <span><i class="icofont-paper"></i> Trasfondos</span> ({{trasfondos}})
+    </a>
+    
+     <a href="{{ path("app_revisiones_dote") }}">
+        <span><i class="icofont-listine-dots"></i> Dotes</span> ({{dotes}})
+    </a>
+    
+     <a href="{{ path("app_revisiones_hechizo") }}">
+        <span><i class="icofont-duotone icofont-wand"></i> Hechizos</span> ({{hechizos}})
+    </a>
+    
+</div>
+{% endblock %}

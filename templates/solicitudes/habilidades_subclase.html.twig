@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BuscadorController!{% endblock %}
+
+{% block body %}
+<div class="formulario center-h center-v">
+<div class="formulario2 ">
+    <h1 class="titulo">Habilidades de subclase</h1>
+    {{ form_start(form) }} 
+    <div class="rowHabilidades">
+        <div class="C">
+            <span>Nombre</span>
+            {{ form_widget(form.Nombre) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            <span>Descripcion</span>
+            {{ form_widget(form.Descripcion) }}
+        </div>
+        <span class="I"></span>
+        <div class="N">
+            <span>Nivel</span>
+            {{ form_widget(form.OrigenNivel) }}
+        </div>
+    </div>
+     <div class="rowHabilidades">
+        <div class="C">
+            <span>Nombre</span>
+            {{ form_widget(form.Nombre2) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            <span>Descripcion</span>
+            {{ form_widget(form.Descripcion2) }}
+        </div>
+        <span class="I"></span>
+        <div class="N">
+            <span>Nivel</span>
+            {{ form_widget(form.OrigenNivel2) }}
+        </div>
+    </div>
+     <div class="rowHabilidades">
+        <div class="C">
+            <span>Nombre</span>
+            {{ form_widget(form.Nombre3) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            <span>Descripcion</span>
+            {{ form_widget(form.Descripcion3) }}
+        </div>
+        <span class="I"></span>
+        <div class="N">
+            <span>Nivel</span>
+            {{ form_widget(form.OrigenNivel3) }}
+        </div>
+    </div>
+     <div class="rowHabilidades">
+        <div class="C">
+            <span>Nombre</span>
+            {{ form_widget(form.Nombre4) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            <span>Descripcion</span>
+            {{ form_widget(form.Descripcion4) }}
+        </div>
+        <span class="I"></span>
+        <div class="N">
+            <span>Nivel</span>
+            {{ form_widget(form.OrigenNivel4) }}
+        </div>
+    </div>
+     <div class="rowHabilidades">
+        <div class="C">
+            <span>Nombre</span>
+            {{ form_widget(form.Nombre5) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            <span>Descripcion</span>
+            {{ form_widget(form.Descripcion5) }}
+        </div>
+        <span class="I"></span>
+        <div class="N">
+            <span>Nivel</span>
+            {{ form_widget(form.OrigenNivel5) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="C">
+            
+        </div>
+        <span class="E"></span>
+        <div class="A"><br>
+            {{ form_row(form.Enviar) }}
+        </div>
+    </div>
+ {{form_end(form)}}
+    
+    </div>
+ </div>
+   
+
+{% endblock %}

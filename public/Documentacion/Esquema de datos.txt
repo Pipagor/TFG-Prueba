@@ -1,0 +1,82 @@
+Clases: 
+-Nombre
+-Requisitos
+-Competencias(armas,armaduras,escudos y herramientas)
+-Salvaciones
+-Habilidades a elegir(habilidades fuera de combate)
+-Puntos de golpe
+-Equipamiento inicial
+-Autor
+-Validado(Boolean)
+
+Subclases:
+-Nombre
+-Requisitos (puede ser ninguno)
+-Clase_id
+-Autor
+-Validado(Boolean)
+
+Habilidades:
+-Nombre
+-origen_id(varía en función de donde venga, clase, subclase, trasfondo y dotes)
+-Descripción
+-Autor
+-Validado(Boolean)
+
+Trasfondo:
+-Nombre
+-Descripción
+-Origen/Ocupación
+-Idiomas(Sólo origen)
+-Objetos iniciales(solo ocupación)
+-Competencias(solo ocupación)
+-Validado(Boolean)
+
+Dotes:
+-Nombre
+-Descripción
+-Requisitos
+-Beneficios
+-Validado(Boolean)
+
+Razas:
+-Nombre
+-Descripción
+-Fuerza
+-Destreza
+-Constitución
+-Inteligencia
+-Sabiduría
+-Carisma
+-Autor
+-Velocidad(fts)
+-Ataque desarmado
+-Validado(Boolean)
+
+Subrazas:
+-Nombre
+-Descripción
+-raza_id
+-Fuerza
+-Destreza
+-Constitución
+-Inteligencia
+-Sabiduría
+-Carisma
+-Autor
+-Ataque desarmado
+-Validado(Boolean)
+
+Hechizos:
+-Nombre
+-Descripción
+-Nivel
+-Escuela
+-Tiempo de ejecución
+-Rango
+-Componentes(Requisitos pueden ser verbales, somáticos y/o materiales)
+-Validado(Boolean)
+
+Lista_Hechizos:
+-Clase_id
+-Hechizo_id

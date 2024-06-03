@@ -1,0 +1,751 @@
+
+
+
+@import url('../icofont/icofont.min.css');
+@font-face {
+    font-family: fuente1;
+    src: url(../../assets/Fuentes/AlteHaasGroteskRegular.ttf);
+  }
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration:none !important;
+    box-sizing: border-box;
+    font-family: fuente1;
+}
+
+body{
+    margin:0;
+    padding:0;
+    max-width: 100%;
+}
+
+header{
+    height: 3em;
+
+    display: flex;
+    justify-content: center;
+
+    position: sticky;
+    top:0px;
+    background-color: rgb(209, 33, 33);
+}
+header .menu li{
+    color: white;
+}
+.menu li{
+    display: inline;
+    width: 30%;
+    padding: 0.3em;
+    margin: auto;
+    border: 0px;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    font-size: 1.5em;
+}
+.menu{
+    padding-top: 0.3em;
+}
+
+.menu li:hover{
+    background-color:rgb(139, 14, 14);
+    box-shadow: 0px 0px 10px black;
+}
+
+.grid-clase{
+    
+    display:grid;
+    grid-template-areas:"V1 I V2"
+                        "V1 N V2"
+                        "P espacio S"
+                        "R espacio E"
+                        "H espacio C";
+
+
+    grid-template-columns:0.375fr 0.25fr 0.375fr;
+    grid-template-rows: 0.5fr 0.1fr repeat(3,0.25fr);
+    
+}
+.grid-ficha-stats1{
+    
+    display:grid;
+    grid-template-areas:"Fuerza"
+                        "Destreza"
+                        "Constitucion"
+                        "Inteligencia"
+                        "Sabiduria"
+                        "Carisma";
+
+    grid-template-columns:0.1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+    
+}
+.grid-ficha-stats2{
+    
+    display:grid;
+    grid-template-areas:"Salvaciones"
+                        "Salvaciones"
+                        "Skills"
+                        "Skills"
+                        "Skills"
+                        "Skills";
+
+    grid-template-columns:0.1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+    
+}
+.Nombre{
+    grid-area:Nombre;
+}
+.Nivel{
+    grid-area:Nivel;
+}
+.Datos{
+    grid-area:Datos;
+}
+.Trasfondo{
+    grid-area:Trasfondo;
+}
+.puntuacion{
+    margin-top: 1em;
+    border: 0.1em solid black;
+    width: 4em;
+    height: 4em;
+}
+.casilla{
+    border: 0.1em solid black;
+    width: 0.8em;
+    height: 0.8em;
+    margin-left: 0.5em;
+    margin-right: 1em;
+    margin-top: 0.3em;
+}
+.casilla_si{
+    border: 0.43em solid black;
+    width: 0.4em;
+    height: 0.4em;
+    margin-left: 0.5em;
+    margin-right: 1em;
+    margin-top: 0.3em;
+}
+.Salvaciones{
+    grid-area:Salvaciones;
+
+    display:grid;
+    grid-template-areas:"espacio espacio"
+                        "Fuerza A"
+                        "Destreza N"
+                        "Constitucion E"
+                        "Inteligencia I"
+                        "Sabiduria V1"
+                        "Carisma V2";
+
+    grid-template-columns:0.2fr 0.8fr;
+    grid-template-rows: auto;
+}
+.Skills{
+    grid-area:Skills;
+
+    display:grid;
+    grid-template-areas:"espacio espacio"
+                        "Cs1 s1"
+                        "Cs2 s2"
+                        "Cs3 s3"
+                        "Cs4 s4"
+                        "Cs5 s5"
+                        "Cs6 s6"
+                        "Cs7 s7"
+                        "Cs8 s8"
+                        "Cs9 s9"
+                        "Cs10 s10"
+                        "Cs11 s11"
+                        "Cs12 s12"
+                        "Cs13 s13"
+                        "Cs14 s14"
+                        "Cs15 s15"
+                        "Cs16 s16"
+                        "Cs17 s17"
+                        "Cs18 s18";
+
+    grid-template-columns:0.2fr 0.8fr;
+    grid-template-rows: auto;
+}
+.s1{
+    grid-area: s1;
+}
+.s2{
+    grid-area: s2;
+}
+.s3{
+    grid-area: s3;
+}
+.s4{
+    grid-area: s4;
+}
+.s5{
+    grid-area: s5;
+}
+.s6{
+    grid-area: s6;
+}
+.s7{
+    grid-area: s7;
+}
+.s8{
+    grid-area: s8;
+}
+.s9{
+    grid-area: s9;
+}
+.s10{
+    grid-area: s10;
+}
+.s11{
+    grid-area: s11;
+}
+.s12{
+    grid-area: s12;
+}
+.s13{
+    grid-area: s13;
+}
+.s14{
+    grid-area: s14;
+}
+.s15{
+    grid-area: s15;
+}
+.s16{
+    grid-area: s16;
+}
+.s17{
+    grid-area: s17;
+}
+.s18{
+    grid-area: s18;
+}
+.Cs1{
+    grid-area: Cs1;
+}
+.Cs2{
+    grid-area: Cs2;
+}
+.Cs3{
+    grid-area: Cs3;
+}
+.Cs4{
+    grid-area: Cs4;
+}
+.Cs5{
+    grid-area: Cs5;
+}
+.Cs6{
+    grid-area: Cs6;
+}
+.Cs7{
+    grid-area: Cs7;
+}
+.Cs8{
+    grid-area: Cs8;
+}
+.Cs9{
+    grid-area: Cs9;
+}
+.Cs10{
+    grid-area: Cs10;
+}
+.Cs11{
+    grid-area: Cs11;
+}
+.Cs12{
+    grid-area: Cs12;
+}
+.Cs13{
+    grid-area: Cs13;
+}
+.Cs14{
+    grid-area: Cs14;
+}
+.Cs15{
+    grid-area: Cs15;
+}
+.Cs16{
+    grid-area: Cs16;
+}
+.Cs17{
+    grid-area: Cs17;
+}
+.Cs18{
+    grid-area: Cs18;
+}
+.Fuerza{
+    grid-area:Fuerza;
+}
+.Destreza{
+    grid-area:Destreza;
+}
+.Constitucion{
+    grid-area:Constitucion;
+}
+.Inteligencia{
+    grid-area:Inteligencia;
+}
+.Sabiduria{
+    grid-area:Sabiduria;
+}
+.Carisma{
+    grid-area:Carisma;
+}
+.Habilidades{
+    grid-area:Habilidades;
+}
+.Competencias{
+    grid-area:Competencias;
+}
+<<<<<<< Updated upstream
+
+.grid-ficha{
+    
+    display:grid;
+    grid-template-areas:"Nombre Nivel"
+                        "Clase Raza"
+                        "espacio Trasfondo"
+                        "Estadisticas Habilidades"
+                        "Competencias";
+
+    grid-template-columns:auto;
+    grid-template-rows: auto;
+    
+}
+.Nombre{
+    grid-area:Nombre;
+}
+.Nivel{
+    grid-area:Nivel;
+}
+.Clase{
+    grid-area:Clase;
+}
+.Raza{
+    grid-area:Raza;
+}
+.Trasfondo{
+    grid-area:Trasfondo;
+}
+.Estadisticas{
+    grid-area:Estadisticas;
+}
+.Habilidades{
+    grid-area:Habilidades;
+}
+.Competencias{
+    grid-area:Competencias;
+}
+
+
+.grid-subclase{
+    
+    display:grid;
+    grid-template-areas:"V1 I V2"
+                        "V1 N V2"
+                        "V1 R V2";
+
+
+    grid-template-columns:0.375fr 0.25fr 0.375fr;
+    grid-template-rows: 0.5fr 0.1fr 0.25fr;
+    
+}
+
+.grid-clase .N, .grid-subclase .N{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.grid-rasgos{
+    
+    display:grid;
+    grid-template-areas:"N V1 L"
+                        "D D D";
+                       
+    grid-template-columns:0.5fr 0.3fr 0.2fr;
+    grid-template-rows: 25px auto;
+    padding:20px;
+}
+.grid-rasgos:hover{
+    background-color: lightgray;
+}
+
+.Progreso{
+    padding:20px;
+    width:100%;
+}
+
+.Progreso td{
+    text-align: center;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+}
+
+.Progreso tr:hover{
+    background-color: lightgray;
+}
+
+/*  GRID AREAS */
+.N{
+    grid-area:N;
+}
+
+.espacio{
+    grid-area:espacio;
+}
+
+.D{
+    grid-area:D;
+}
+
+.I{
+    grid-area:I;
+}
+
+.I img{
+    width:100%;
+    height:100%;
+    border-radius: 100%;
+    padding:2.5px;
+    box-shadow: 0px 0px 10px black;
+}
+.R{
+    grid-area:R;
+}
+
+.P{
+    grid-area:P;
+}
+
+.E{
+    grid-area:E;
+}
+
+.V1{
+    grid-area:V1;
+}
+
+.V2{
+    grid-area:V2;
+}
+
+.C{
+    grid-area:C;
+}
+
+.S{
+    grid-area:S;
+}
+
+.L{
+    grid-area:L;
+}
+
+.A{
+    grid-area:A;
+}
+
+h1{
+    text-align:center;
+}
+
+
+.listado{
+    margin-left:6%;
+    margin-right:6%;
+    margin-top:2em;
+    margin-bottom:5em;
+    
+}
+
+.elemento img{
+    width:55px;
+    height:55px;
+    border-radius: 100%;
+    padding:2.5px;
+    box-shadow: 0px 0px 10px black;
+    margin-right:0.15em;
+}
+
+.elemento{
+    display:grid;
+    grid-template-areas:"I N E S"
+                        "I A E C";
+                       
+    grid-template-columns:0.05fr 0.25fr 0.1fr 0.6fr;
+    grid-template-rows: auto;
+    padding:20px;
+    border-radius:5px;
+    border-bottom: 1px solid gray;
+    background-color:white;
+}
+
+.SU .listado .elemento{
+    margin-top:0.25em;
+    box-shadow: 0px 0px 3px black;
+}
+
+body{
+    background-color:rgb(187, 210, 218);
+}
+
+.elemento:hover{
+    background-color: lightgray;
+}
+
+a:link {
+    color: black;
+  }
+  
+  a:visited {
+    color: black;
+  }
+  
+  a:hover {
+    color: black;
+  }
+  
+  a:active {
+    color: black;
+  }
+
+  .titulo{
+    margin-top: 10px;
+    text-align:left;
+    padding:10px;
+
+  }
+
+  .row{
+    display:grid;
+    grid-template-areas:"C E A";
+                       
+    grid-template-columns:0.45fr 0.1fr 0.45fr;
+    grid-template-rows: auto;
+    padding:10px;
+  }
+
+  .formulario{
+    display:flex;
+    width:100%;
+  }
+
+  .formulario2{
+    border-radius:5px;
+    background-color:white;
+    margin-left:150px;
+    margin-right:150px;
+    margin-top:50px;
+    margin-bottom:50px;
+    width:40%;
+    box-shadow: 0px 0px 10px gray;
+  }
+
+  .center-h {
+    justify-content: center;
+  }
+  .center-v {
+    align-items: center;
+  }
+
+  
+
+  input, select,button{
+    width:90%;
+    border-radius:5px;
+    height:2.5rem;
+    padding:0.5rem;
+    font-size:medium;
+    border-color:lightgray;
+    box-shadow: 0px 0px 0px black;
+  }
+
+  label{
+    font-size:large;
+  }
+
+.flex{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    
+}
+
+button{
+    background-color: rgb(209, 33, 33);
+    color:white;
+    cursor:pointer;
+}
+
+.indices{
+    display:flex;
+    
+    margin-top: 1rem;
+   border: 1px solid black;
+   width:600px;
+    margin:auto;
+    padding:10px;
+    border-radius:5px;
+    margin-top: 1rem;
+    flex-direction:column;
+    background-color: white;
+
+}
+
+.indices a{
+    
+    margin-right: 0.5rem;
+    color: rgb(209, 33, 33);
+    border-bottom: 1px solid gray;
+    padding:10px;
+    text-align: left;
+}
+
+.indices a:hover{
+    background-color: lightgray;
+    transition:all 0.5s;
+}
+
+.indices h1{
+    text-align:left;
+    margin-bottom: 1rem;
+    margin-left:0.5rem;
+}
+
+.login{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    border: 1px solid black;
+    width:600px;
+    margin:auto;
+    padding:10px;
+    border-radius:5px;
+    margin-top: 1rem;
+    flex-direction:column;
+    background-color: white;    
+}
+
+.loginUser{
+    margin-bottom:1rem;
+}
+
+.loginPass{
+    margin-bottom:1rem;
+}
+
+.login h1{
+    margin-bottom: 1rem;
+}
+
+.rowHabilidades{
+    display:grid;
+    grid-template-areas:"C E A I N";                    
+    grid-template-columns:0.3fr 0.05fr 0.4fr 0.05fr 0.15fr;
+    grid-template-rows: auto;
+    padding:10px;
+    
+  }
+
+  .loginButton{
+    width:150px;
+    
+  }
+
+  .divLoginButton{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu_login *, .menu_logout *{
+    margin-top: 0.7em;
+    right: 1em;
+    display: inline-block;
+    color: white;
+    transform: scale(2);
+    position: absolute;
+  }
+
+  
+
+  .lista_revisiones {
+    width: 750px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    margin-top:2rem;
+}
+
+.elemento_revisiones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding: 10px 0;
+}
+
+.lista_revisiones h1{
+    margin-bottom: 1rem;
+}
+
+
+.elemento_revisiones button {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 10px;
+    
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.elemento_revisiones img{
+    width:55px;
+    height:55px;
+    border-radius: 100%;
+    padding:2.5px;
+    box-shadow: 0px 0px 10px black;
+    margin-right: 1rem;
+}
+
+footer {
+    background-color: rgb(198, 197, 197);
+    text-align: center;
+    padding: 0.5em;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: small;
+    position: fixed;
+}
+footer h4{
+    font-size: medium;
+    margin: 0.1em;
+    font-weight: bold;
+}
+
+.tituloApp{
+    padding:2rem;
+    font-size: 100px;
+}
+
+
+

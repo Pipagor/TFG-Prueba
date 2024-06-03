@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+ {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/bodygrid.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="grid-body">
+        <div class="L1"></div>
+        <div class="L2"></div>
+        <div class="DC">
+            <div class='grid-subclase'>
+                <span class="V1"> </span>
+                <h1 class="N">{{hechizo.nombre}}</h1>
+                <span class="V2"> </span>
+                <div class="R">Nivel: {{hechizo.Nivel}}</div>
+                <div class="I" ><img src="{{hechizo.img}}"/></div>
+            </div>
+        </div>
+        <div class="TP">
+            <h1>Datos técnicos del hechizo</h1>
+            <table class="Progreso">
+                <tr>
+                    <td><b>Escuela</b></td>
+                    <td>{{hechizo.Escuela}}</td>
+                </tr>
+                <tr>
+                    <td><b>Componentes</b></td>
+                    <td>{{hechizo.Componentes}}</td>
+                </tr>
+                <tr>
+                    <td><b>Alcance</b></td>
+                    <td>{{hechizo.Rango}}</td>
+                </tr>
+                <tr>
+                    <td><b>Área de efecto</b></td>
+                    <td>{{hechizo.ZonaEfecto}}</td>
+                </tr>
+                <tr>
+                    <td><b>Tiempo de Ejecución</b></td>
+                    <td>{{hechizo.TiempoDeEjecucion}}</td>
+                </tr>
+                <tr>
+                    <td><b>Duración</b></td>
+                    <td>{{hechizo.Duracion}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="RC">
+            <h1>Beneficios</h1>
+            <div class="grid-rasgos">
+                <span class="N"><b>{{hechizo.Nombre}}</b></span>
+                <span class="V1"></span>
+                <span class="L"><b>Nivel: {{hechizo.Nivel}}</b></span>
+                <span class="D">{{hechizo.Descripcion}}</span> 
+            </div>
+        </div>
+        <div class="SU"></div>
+    </div>
+    
+{% endblock %}
+
+

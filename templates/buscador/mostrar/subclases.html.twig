@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('styles/bodygrid.css') }}">
+{% endblock %}
+{% block body %}
+   <div class="grid-body">
+      <div class="L1"></div>
+      <div class="L2"></div>
+      <div class="DC">
+            <div class='grid-subclase'>
+                <span class="V1"> </span>
+                <h1 class="N">{{subclase.nombre}}</h1>
+                <span class="V2"> </span>
+                <div class="R"><b>Requisitos: </b> <p>{{subclase.Requisitos}}</p></div>
+                <div  class="I" ><img src="{{subclase.img}}"/></div>
+            </div>
+        </div>
+      <div class="TP" >
+            <h1>Tabla de Progresión</h1>
+            <table class="Progreso">
+            <tr>
+                <th>Nivel</th>
+                <th>Competencia</th>
+                <th>Mejoras</th>
+                {% if clase.id == 3 %}
+                    <th>Despliegue Artístico</th>
+                {% endif %}
+            </tr>
+                {% for linea in tabla %}
+                    <tr>
+                        <td>{{linea[0]}}</td>
+                        <td>{{linea[1]}}</td>
+                        <td>{{linea[2]}}</td>
+                        {% if clase.id == 3 %}
+                            <td>{{linea[3]}}</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+      <div class="RC">
+            <h1>Rasgos de Subclase</h1>
+            <div>
+                {% for habilidad in rasgos %}
+                    <div class="grid-rasgos">
+                        <span class="N"><b>{{habilidad.nombre}}</b></span>
+                        <span class="V1"></span>
+                        <span class="L"><b><i>Nivel {{habilidad.OrigenNivel}}</i></b></span>
+                        <span class="D">{% set parraf = ""%}
+                                        {% set buffer = 0 %}
+                                        {% for i in 0.. habilidad.descripcion|length %}
+                                            {% if buffer > 0 %}
+                                                {% set buffer = buffer - 1 %}
+                                            {% elseif habilidad.descripcion|slice(i,5) == "{|S|}" %}
+                                                {% set parraf = [parraf,"\n"]|join %}
+                                                {% set buffer = 4 %}
+                                            {% elseif habilidad.descripcion|slice(i,5) == "{|B|}" %}
+                                                {{parraf|nl2br}}
+                                                {% set parraf = ""%}
+                                                <b>
+                                                {% set buffer = 4 %}
+                                            {% elseif habilidad.descripcion|slice(i,5) == "{|I|}" %}
+                                                {{parraf|nl2br}}
+                                                {% set parraf = ""%}
+                                                <i>
+                                                {% set buffer = 4 %}
+                                            {% elseif habilidad.descripcion|slice(i,6) == "{|/B|}" %}
+                                                {{parraf|nl2br}}
+                                                {% set parraf = ""%}
+                                                </b>
+                                                {% set buffer = 5 %}
+                                            {% elseif habilidad.descripcion|slice(i,6) == "{|/I|}" %}
+                                                {{parraf|nl2br}}
+                                                {% set parraf = ""%}
+                                                </i>
+                                                {% set buffer = 5 %}
+                                            {% else %}
+                                                {% set parraf = [parraf,habilidad.descripcion|slice(i,1)]|join %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        {{parraf|nl2br}}
+                        </span> 
+                    </div><br>
+                {% endfor %}
+            </div>
+        </div>
+      <div class="SU">
+         <h1>Clase principal</h1>
+                <div class="listado">
+                  <a class="elemento" href="{{ path( "app_clase", { "id": clase.id} ) }}">
+                     <img class="I" src="{{clase.img}}">
+                     <h2 class="N">{{ clase.Nombre }}</h2>
+                     <span class="E"></span>
+                     <i class="C">{{clase.Competencias}}</i>
+                     <i class="A">{{clase.Autor}}</i>
+                     <span class="S"><b>Salvaciones:</b> {{clase.Salvaciones}}</span>
+                  </a>
+                </div>
+      </div>
+
+   </div>
+    
+{% endblock %}
+
+

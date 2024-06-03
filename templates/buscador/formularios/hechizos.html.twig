@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+<div class="formulario center-h center-v">
+<div class="formulario2 ">
+    <h1 class="titulo">Hechizos</h1>
+ {{ form_start(form) }} 
+    <div class="row">
+        <div class="C">
+            {{ form_row(form.Nombre) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.Nivel) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+            {{ form_row(form.Escuela) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.Rango) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+            {{ form_row(form.Componentes) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.Zona_Efecto) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+            {{ form_row(form.TiempoDeEjecucion) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.Duracion) }}
+        </div>
+    </div>
+        <div class="row">
+            <div class="C">
+                 {{ form_row(form.Autor) }}
+            </div>
+            <span class="E"></span>
+            <div class="A"><br>
+               {{ form_row(form.Enviar) }}
+            </div>
+ {{form_end(form)}}
+    
+    </div>
+ </div>
+ 
+
+
+{% endblock %}

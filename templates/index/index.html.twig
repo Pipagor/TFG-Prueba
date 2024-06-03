@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ parent() }}
+{% endblock %}
+{% block body %}
+<h1 class="tituloApp"><b>¡Bienvenido a DNDpedia!</b></h1>
+<div class="indices">
+    <h1>Accesos Rápidos</h1>
+    <a href="{{ path("app_resultados_clases") }}">
+        <span><i class="icofont-shield"></i> Clases</span> 
+    </a>
+    
+    <a href="{{ path("app_resultados_subclases") }}">
+        <span><i class="icofont-duotone icofont-shield"></i> Subclases</span> 
+    </a>
+    
+    <a href="{{ path("app_resultados_razas") }}">
+        <span><i class="icofont-users-alt-3"></i> Razas</span> 
+    </a>
+    
+     <a href="{{ path("app_resultados_subrazas") }}">
+        <span><i class="icofont-user"></i> Subrazas</span> 
+    </a>
+    
+    <a href="{{ path("app_resultados_trasfondos") }}">
+        <span><i class="icofont-paper"></i> Trasfondos</span> 
+    </a>
+    
+     <a href="{{ path("app_resultados_dotes") }}">
+        <span><i class="icofont-listine-dots"></i> Dotes</span> 
+    </a>
+    
+     <a href="{{ path("app_resultados_hechizos") }}">
+        <span><i class="icofont-duotone icofont-wand"></i> Hechizos</span> 
+    </a>
+    
+</div>
+{% endblock %}

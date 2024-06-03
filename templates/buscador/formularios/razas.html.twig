@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<div class="formulario center-h center-v">
+<d class="formulario2 ">
+    <h1 class="titulo">Razas</h1>
+ {{ form_start(form) }} 
+    <div class="row">
+        <div class="C">
+            {{ form_row(form.Nombre) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.Fuerza) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+            {{ form_row(form.Destreza) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.Constitucion) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+            {{ form_row(form.Inteligencia) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.Sabiduria) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+            {{ form_row(form.Carisma) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.AtaqueDesarmado) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+            {{ form_row(form.Velocidad) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.Autor) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+          
+        </div>
+        <span class="E"></span>
+        <div class="A"><br>
+            {{ form_row(form.Enviar) }}
+        </div>
+    </div>
+ {{form_end(form)}}
+    <div class="flex">
+        <p><a  href="{{ path("app_buscador_subraza") }}">Ir al filtro de Subrazas</a></p>
+        </div>
+    </div>
+ </div>
+
+
+
+{% endblock %}
+

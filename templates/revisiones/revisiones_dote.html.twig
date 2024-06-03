@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="lista_revisiones">
+    <h1>Revisiones de las Dotes</h1>
+    {% for revision in revisiones %}
+    <div class="elemento_revisiones">
+        <img src="{{revision.img}}">
+        <h2>{{ revision.Nombre }}</h2>
+        <div>
+            <button onclick="location.href='{{ path("app_comprobar_dote", {'id': revision.id}) }}'" class="btn btn-info">Ver más</button>
+            <button onclick="location.href='{{ path('app_validar_dote', {'id': revision.id}) }}'" class="btn btn-success">Validar dote</button>
+            <button onclick="location.href='{{ path('app_eliminar_dote', {'id': revision.id}) }}'" class="btn btn-danger">Eliminar dote</button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

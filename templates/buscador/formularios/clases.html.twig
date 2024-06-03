@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+<div class="formulario center-h center-v">
+<div class="formulario2 ">
+    <h1 class="titulo">Clases</h1>
+ {{ form_start(form) }} 
+    <div class="row">
+        <div class="C">
+            {{ form_row(form.Nombre) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.Salvaciones) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+            {{ form_row(form.Requisitos) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.Magia) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+            {{ form_row(form.Competencias) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form.PuntosDeGolpe) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+            {{ form_row(form.Autor) }}
+        </div>
+        <span class="E"></span>
+        <div class="A"><br>
+            {{ form_row(form.Enviar) }}
+        </div>
+    </div>
+ {{form_end(form)}}
+    
+        <div class="flex">
+            <p class="boton_secundario"><a  href="{{ path("app_buscador_subclase") }}">Subclases</a></p>
+        </div>
+    </div>
+ </div>
+ 
+
+
+{% endblock %}

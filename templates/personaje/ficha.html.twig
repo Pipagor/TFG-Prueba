@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Ficha de {{datos['Nombre']}}{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/bodygrid.css') }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        {% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body class="grid-body">
+    <div class="L1"></div>
+    <div class="L2"></div>
+    <div class="DC">
+            <span class="Nombre"><b>{{datos['Nombre']}}</b>: {{datos['Clase'].Nombre}} {{datos['Subclase'].Nombre}} de nivel {{datos['Nivel']}}</span>
+            <br><span>{{datos['Raza'].Nombre}}, {{datos['Subraza'].Nombre}}.</span>
+            <br><span>Trasfondo: {{datos['Ocupacion'].Nombre}} de {{datos['Origen'].Nombre}}</span>
+            <br><span>Ataque desarmado: {{datos['Subraza'].AtaqueDesarmado}}</span>
+            <hr>
+    </div>
+    <div class="TP">
+        <div class="grid-ficha-stats1">
+            <div class="Fuerza">
+                <h4>Estadísticas</h4>
+                <div class="puntuacion"></div><i>Base {{8 + datos['Raza'].Fuerza + datos['Subraza'].Fuerza}}</i>
+            </div>
+            <div class="Destreza">
+                <div class="puntuacion"></div><i>Base {{8 + datos['Raza'].Destreza + datos['Subraza'].Destreza}}</i>
+            </div>
+            <div class="Constitucion">
+                <div class="puntuacion"></div><i>Base {{8 + datos['Raza'].Constitucion + datos['Subraza'].Constitucion}}</i>
+            </div>
+            <div class="Inteligencia">
+                <div class="puntuacion"></div><i>Base {{8 + datos['Raza'].Inteligencia + datos['Subraza'].Inteligencia}}</i>
+            </div>
+            <div class="Sabiduria">
+                <div class="puntuacion"></div><i>Base {{8 + datos['Raza'].Sabiduria + datos['Subraza'].Sabiduria}}</i>
+            </div>
+            <div class="Carisma">
+                <div class="puntuacion"></div><i>Base {{8 + datos['Raza'].Carisma + datos['Subraza'].Carisma}}</i>
+            </div>
+        </div>
+        
+    </div>
+    <div class="RC">
+        <div class="grid-ficha-stats2">
+            <div class="Salvaciones">
+                <div class="espacio">
+                    <h4>Salvaciones</h4>
+                </div>
+                <div class="Fuerza">
+                    {% if "Fuerza" in datos['Clase'].Salvaciones %}
+                    <div class="casilla_si"></div> 
+                    {% else %}
+                    <div class="casilla"></div>
+                    {% endif %}
+                </div>
+                <div class="A">Fuerza</div>
+                <div class="Destreza">
+                    {% if "Destreza" in datos['Clase'].Salvaciones %}
+                    <div class="casilla_si"></div> 
+                    {% else %}
+                    <div class="casilla"></div>
+                    {% endif %}
+                </div>
+                <div class="N">Destreza</div>
+                <div class="Constitucion">
+                    {% if "Constitución" in datos['Clase'].Salvaciones %}
+                    <div class="casilla_si"></div> 
+                    {% else %}
+                    <div class="casilla"></div>
+                    {% endif %}
+                </div>
+                <div class="E">Constitución</div>
+                <div class="Inteligencia">
+                    {% if "Inteligencia" in datos['Clase'].Salvaciones %}
+                    <div class="casilla_si"></div> 
+                    {% else %}
+                    <div class="casilla"></div>
+                    {% endif %}
+                </div>
+                <div class="I">Inteligencia</div>
+                <div class="Sabiduria">
+                    {% if "Sabiduría" in datos['Clase'].Salvaciones %}
+                    <div class="casilla_si"></div> 
+                    {% else %}
+                    <div class="casilla"></div>
+                    {% endif %}
+                </div>
+                <div class="V1">Sabiduría</div>
+                <div class="Carisma">
+                    {% if "Carisma" in datos['Clase'].Salvaciones %}
+                    <div class="casilla_si"></div> 
+                    {% else %}
+                    <div class="casilla"></div>
+                    {% endif %}
+                </div>
+                <div class="V2">Carisma</div>
+            </div>
+            <div class="Skills">
+                <div class="espacio"><h4>Aptitudes</h4></div>
+                <div class="Cs1">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s1">
+                    <span>Acrobacias</span>  
+                </div>
+                <div class="Cs2">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s2">
+                    <span>Trato con Animales</span>  
+                </div>
+                <div class="Cs3">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s3">
+                    <span>Arcano</span>  
+                </div>
+                <div class="Cs4">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s4">
+                    <span>Engaño</span>  
+                </div>
+                <div class="Cs5">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s5">
+                    <span>Historia</span>  
+                </div>
+                <div class="Cs6">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s6">
+                    <span>Perspicacia</span>  
+                </div>
+                <div class="Cs7">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s7">
+                    <span>Intimidación</span>  
+                </div>
+                <div class="Cs8">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s8">
+                    <span>Investigación</span>  
+                </div>
+                <div class="Cs9">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s9">
+                    <span>Medicina</span>  
+                </div>
+                <div class="Cs10">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s10">
+                    <span>Naturaleza</span>  
+                </div>
+                <div class="Cs11">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s11">
+                    <span>Percepción</span>  
+                </div>
+                <div class="Cs12">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s12">
+                    <span>Atletismo</span>  
+                </div>
+                <div class="Cs13">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s13">
+                    <span>Interpretación</span>  
+                </div>
+                <div class="Cs14">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s14">
+                    <span>Persuasión</span>  
+                </div>
+                <div class="Cs15">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s15">
+                    <span>Religión</span>  
+                </div>
+                <div class="Cs16">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s16">
+                    <span>Juego de Manos</span>  
+                </div>
+                <div class="Cs17">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s17">
+                    <span>Sigilo</span>  
+                </div>
+                <div class="Cs18">
+                    <div class="casilla"></div>
+                </div>
+                <div class="s18">
+                    <span>Supervivencia</span>  
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="SU">
+    <hr>
+    <h2>Descripciones de habilidades</h2><hr><br>
+        {% for elemento in datos['Habilidades']%}
+                    <h4>{{elemento.Nombre}}</h4>
+                    <i>Habilidad 
+                    {% if "trasfondo_" in elemento.OrigenID %}
+                    de Trasfondo 
+                    {% elseif "razas_" in elemento.OrigenID %}
+                    de Raza
+                    {% elseif "clases_" in elemento.OrigenID %}
+                    de Clase
+                    {% endif %}
+                    obtenida a nivel: {{elemento.OrigenNivel}}</i><br><hr>
+                                    <p>{% set parraf = ""%}
+                                        {% set buffer = 0 %}
+                                        {% for i in 0.. elemento.Descripcion|length %}
+                                            {% if buffer > 0 %}
+                                                {% set buffer = buffer - 1 %}
+                                            {% elseif elemento.Descripcion|slice(i,5) == "{|S|}" %}
+                                                {% set parraf = [parraf,"\n"]|join %}
+                                                {% set buffer = 4 %}
+                                            {% elseif elemento.Descripcion|slice(i,5) == "{|B|}" %}
+                                                {{parraf|nl2br}}
+                                                {% set parraf = ""%}
+                                                <b>
+                                                {% set buffer = 4 %}
+                                            {% elseif elemento.Descripcion|slice(i,5) == "{|I|}" %}
+                                                {{parraf|nl2br}}
+                                                {% set parraf = ""%}
+                                                <i>
+                                                {% set buffer = 4 %}
+                                            {% elseif elemento.Descripcion|slice(i,6) == "{|/B|}" %}
+                                                {{parraf|nl2br}}
+                                                {% set parraf = ""%}
+                                                </b>
+                                                {% set buffer = 5 %}
+                                            {% elseif elemento.Descripcion|slice(i,6) == "{|/I|}" %}
+                                                {{parraf|nl2br}}
+                                                {% set parraf = ""%}
+                                                </i>
+                                                {% set buffer = 5 %}
+                                            {% else %}
+                                                {% set parraf = [parraf,elemento.Descripcion|slice(i,1)]|join %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        {{parraf|nl2br}}</p><br>
+        {% endfor %}
+    </div>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<div class="formulario center-h center-v">
+<d class="formulario2 ">
+    <h1 class="titulo">Subclases</h1>
+ {{ form_start(form2) }} 
+    <div class="row">
+        <div class="C">
+            {{ form_row(form2.Nombre) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form2.Requisitos) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+            {{ form_row(form2.Autor) }}
+        </div>
+        <span class="E"></span>
+        <div class="A">
+            {{ form_row(form2.clase_id) }}
+        </div>
+    </div>
+     <div class="row">
+        <div class="C">
+          
+        </div>
+        <span class="E"></span>
+        <div class="A"><br>
+            {{ form_row(form2.Enviar) }}
+        </div>
+    </div>
+ {{form_end(form2)}}
+    </div>
+ </div>
+
+
+
+{% endblock %}

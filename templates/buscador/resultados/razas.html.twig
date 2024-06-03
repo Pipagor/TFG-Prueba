@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<div class="listado">
+     {% for raza in resultado %}
+     <a class="elemento" href="{{ path( "app_raza", { "id": raza.id} ) }}">
+        <img class="I" src="{{raza.img}}">
+       <h2 class="N">{{ raza.Nombre }}</h2>
+       <span class="E"></span>
+       <i class="S">{{raza.Descripcion}}</i>
+        <i class="A">{{raza.Autor}}</i>
+        <span class="C"></span>
+
+         
+      </a>
+      
+     {% endfor %}
+  
+ </div>
+
+
+
+{% endblock %}
+
+
